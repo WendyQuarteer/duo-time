@@ -39,3 +39,11 @@ h1{
     margin-top: auto;
     margin-bottom: auto;
 }
+
+footer, .wenkesPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightyellow;
+    color: black;
+}
