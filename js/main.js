@@ -81,13 +81,13 @@ document.getElementsByClassName('media')[0].style.backgroundImage = "url('images
 document.getElementsByClassName('media')[0].style.color = "#0909e1";
 
 // favorite celebrity
-document.getElementsByClassName('media')[1].style.backgroundImage = "url('images/ffBackground.jpg')";
+document.getElementsByClassName('media')[1].style.backgroundImage = "url('images/ffbackground.jpg')";
 document.getElementsByClassName('media')[1].style.backgroundRepeat = "no-repeat";
 document.getElementsByClassName('media')[1].style.backgroundSize = "cover";
 document.getElementsByClassName('media')[1].style.color = "#0909e1";
-
+    
 //hobby section styling
-document.getElementsByClassName('media')[2].style.backgroundImage = "url('images/hobbyBackground.jpg')";
+document.getElementsByClassName('media')[2].style.backgroundImage = "url('images/hobbybackground.jpg')";
 document.getElementsByClassName('media')[2].style.backgroundRepeat = "no-repeat";
 document.getElementsByClassName('media')[2].style.backgroundSize = "cover";
 document.getElementsByClassName('media')[2].style.color = "#0909e1";
