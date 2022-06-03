@@ -2,15 +2,21 @@ const oldPage = document.body.innerHTML;
 challengeButtonHover()
 celebrityHover()
 wendyPageHover()
+fixChallenge()
 //challengebox
-const button = document.getElementById('button');
-const input = document.getElementById('input');
 
-const handleClick = () => {
-    input.value = 'Hello World';
-};
+function fixChallenge() {
+    const button = document.getElementById('button');
+    const input = document.getElementById('input');
+    button.addEventListener('click', challenge);
+    function challenge() {
+        input.value = 'Hello World';
+    }
+}
 
-button.addEventListener('click', handleClick);
+
+
+
 
 //fix margin of header with big picture
 document.getElementsByTagName('header')[0].style.marginBottom = "9%";
@@ -203,6 +209,7 @@ function addButton(){
         }
         old = !old;
         addButton();
+        fixChallenge()
         // challengeButtonHover()
         // celebrityHover()
         // wendyPageHover()
