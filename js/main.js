@@ -1,4 +1,7 @@
 const oldPage = document.body.innerHTML;
+challengeButtonHover()
+celebrityHover()
+wendyPageHover()
 //challengebox
 const button = document.getElementById('button');
 const input = document.getElementById('input');
@@ -86,22 +89,26 @@ document.getElementsByClassName('media')[1].style.backgroundRepeat = "no-repeat"
 document.getElementsByClassName('media')[1].style.backgroundSize = "cover";
 document.getElementsByClassName('media')[1].style.color = "#0909e1";
 
-//change on hover
-document.getElementsByClassName('media')[1].addEventListener('mouseover', () => {
-    document.getElementById('dwayne').src = "./images/ryan.jpg";
-    document.getElementsByClassName('media')[1].style.backgroundImage = "url('images/dpbackground.jpg')";
-    document.getElementById('celebrityText').innerText =  "Famous actor known best for playing Deadpool"
-    document.getElementsByClassName('celebrityName')[0].innerText =  "Ryan Reynolds";
-})
+
+function celebrityHover() {
+    //change on hover
+    document.getElementsByClassName('media')[1].addEventListener('mouseover', () => {
+        document.getElementById('dwayne').src = "./images/ryan.jpg";
+        document.getElementsByClassName('media')[1].style.backgroundImage = "url('images/dpbackground.jpg')";
+        document.getElementById('celebrityText').innerText =  "Famous actor known best for playing Deadpool"
+        document.getElementsByClassName('celebrityName')[0].innerText =  "Ryan Reynolds";
+    })
 
 //return to normal when leaving
-document.getElementsByClassName('media')[1].addEventListener('mouseleave', () => {
-    document.getElementById('dwayne').src = "./images/dwayne.png";
-    document.getElementsByClassName('media')[1].style.backgroundImage = "url('images/ffbackground.jpg')";
-    document.getElementsByClassName('media')[1].style.backgroundRepeat = "no-repeat";
-    document.getElementsByClassName('media')[1].style.backgroundSize = "cover";
-    document.getElementsByClassName('media')[1].style.color = "#0909e1";
-})
+    document.getElementsByClassName('media')[1].addEventListener('mouseleave', () => {
+        document.getElementById('dwayne').src = "./images/dwayne.png";
+        document.getElementsByClassName('media')[1].style.backgroundImage = "url('images/ffbackground.jpg')";
+        document.getElementsByClassName('media')[1].style.backgroundRepeat = "no-repeat";
+        document.getElementsByClassName('media')[1].style.backgroundSize = "cover";
+        document.getElementsByClassName('media')[1].style.color = "#0909e1";
+    })
+}
+
 //hobby section styling
 document.getElementsByClassName('media')[2].style.backgroundImage = "url('images/hobbybackground.jpg')";
 document.getElementsByClassName('media')[2].style.backgroundRepeat = "no-repeat";
@@ -124,14 +131,17 @@ document.getElementById('button').style.backgroundColor = "black";
 document.getElementById('button').style.color = "#0909e1";
 
 //hover effect on challengeButton
-document.getElementById('button').addEventListener('mouseover', () =>{
-    document.getElementById('button').style.backgroundColor = "#0909e1";
-    document.getElementById('button').style.color = "black";
-})
-document.getElementById('button').addEventListener('mouseleave', () =>{
-    document.getElementById('button').style.backgroundColor = "black";
-    document.getElementById('button').style.color = "#0909e1";
-})
+function challengeButtonHover() {
+    document.getElementById('button').addEventListener('mouseover', () =>{
+        document.getElementById('button').style.backgroundColor = "#0909e1";
+        document.getElementById('button').style.color = "black";
+    })
+    document.getElementById('button').addEventListener('mouseleave', () =>{
+        document.getElementById('button').style.backgroundColor = "black";
+        document.getElementById('button').style.color = "#0909e1";
+    })
+}
+
 
 
 // change footer
@@ -145,23 +155,26 @@ document.getElementById('wendy').style.border = "2px dashed #0909e1";
 document.getElementById('wendy').style.borderRadius = "50%";
 document.getElementById('wendy').style.color = "#0909e1";
 
-//hover effect on wendy's page button
-document.getElementById('wendy').addEventListener('mouseover', ()=>{
-    document.getElementById('wendy').style.backgroundColor = "#0909e1";
-    document.getElementById('wendy').style.color =  "black";
-    document.getElementById('wendy').style.border = "4px double transparent";
-    document.getElementById('wendy').style.borderImage = "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)";
-    document.getElementById('wendy').style.borderImageSlice = "1";
-    document.getElementById('wendy').style.borderRadius = "";
-})
+function wendyPageHover() {
+    //hover effect on wendy's page button
+    document.getElementById('wendy').addEventListener('mouseover', ()=>{
+        document.getElementById('wendy').style.backgroundColor = "#0909e1";
+        document.getElementById('wendy').style.color =  "black";
+        document.getElementById('wendy').style.border = "4px double transparent";
+        document.getElementById('wendy').style.borderImage = "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)";
+        document.getElementById('wendy').style.borderImageSlice = "1";
+        document.getElementById('wendy').style.borderRadius = "";
+    })
 
 //mouse out effect on wendy's page button
-document.getElementById('wendy').addEventListener('mouseout', () =>{
-    document.getElementById('wendy').style.backgroundColor = "transparent";
-    document.getElementById('wendy').style.border = "2px dashed #0909e1";
-    document.getElementById('wendy').style.borderRadius = "50%";
-    document.getElementById('wendy').style.color = "#0909e1";
-})
+    document.getElementById('wendy').addEventListener('mouseout', () =>{
+        document.getElementById('wendy').style.backgroundColor = "transparent";
+        document.getElementById('wendy').style.border = "2px dashed #0909e1";
+        document.getElementById('wendy').style.borderRadius = "50%";
+        document.getElementById('wendy').style.color = "#0909e1";
+    })
+}
+
 
 //reset button
 const newPage = document.body.innerHTML;
@@ -190,5 +203,8 @@ function addButton(){
         }
         old = !old;
         addButton();
+        challengeButtonHover()
+        celebrityHover()
+        wendyPageHover()
     });
 }
