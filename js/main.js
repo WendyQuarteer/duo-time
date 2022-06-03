@@ -20,8 +20,7 @@ document.getElementsByTagName('li')[3].innerText ="Down to earth";
 // fix no label for input
 let challengebox = document.getElementById('challengebox');
 let label = document.createElement("label");
-
-label.setAttribute('for', 'checkbox');
+label.for = "input";
 
 
 challengebox.appendChild(label);
