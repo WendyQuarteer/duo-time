@@ -32,10 +32,8 @@ if (!link) {
 }
 link.href = 'pug.png?';
 
-//change celebrity text
-let change = document.getElementById('celebrityText');
-change.innerText = "Famous actor known from Fast & Furious series and jumanji"
-
+// //change celebrity text
+document.getElementById('celebrityText').innerText =  "Famous actor known from Fast & Furious series and jumanji"
 //change avatar into hobbies section
 let title = document.getElementsByClassName('him')[0];
 title.innerText = "Hobbies";
@@ -44,6 +42,7 @@ remove.style.display = "none";
 
 let tuxedo = document.getElementsByClassName('change')[0];
 tuxedo.style.display = "none";
+
 // make it a hobbies section
 let hobbieSection = document.getElementById('hobbiesectie');
 let hobbies = document.createElement('div');
@@ -87,6 +86,22 @@ document.getElementsByClassName('media')[1].style.backgroundRepeat = "no-repeat"
 document.getElementsByClassName('media')[1].style.backgroundSize = "cover";
 document.getElementsByClassName('media')[1].style.color = "#0909e1";
 
+//change on hover
+document.getElementsByClassName('media')[1].addEventListener('mouseover', () => {
+    document.getElementById('dwayne').src = "./images/ryan.jpg";
+    document.getElementsByClassName('media')[1].style.backgroundImage = "url('images/dpbackground.jpg')";
+    document.getElementById('celebrityText').innerText =  "Famous actor known best for playing Deadpool"
+    document.getElementsByClassName('celebrityName')[0].innerText =  "Ryan Reynolds";
+})
+
+//return to normal when leaving
+document.getElementsByClassName('media')[1].addEventListener('mouseleave', () => {
+    document.getElementById('dwayne').src = "./images/dwayne.png";
+    document.getElementsByClassName('media')[1].style.backgroundImage = "url('images/ffbackground.jpg')";
+    document.getElementsByClassName('media')[1].style.backgroundRepeat = "no-repeat";
+    document.getElementsByClassName('media')[1].style.backgroundSize = "cover";
+    document.getElementsByClassName('media')[1].style.color = "#0909e1";
+})
 //hobby section styling
 document.getElementsByClassName('media')[2].style.backgroundImage = "url('images/hobbybackground.jpg')";
 document.getElementsByClassName('media')[2].style.backgroundRepeat = "no-repeat";
@@ -108,6 +123,17 @@ document.getElementById('button').style.borderRadius = "50%";
 document.getElementById('button').style.backgroundColor = "black";
 document.getElementById('button').style.color = "#0909e1";
 
+//hover effect on challengeButton
+document.getElementById('button').addEventListener('mouseover', () =>{
+    document.getElementById('button').style.backgroundColor = "#0909e1";
+    document.getElementById('button').style.color = "black";
+})
+document.getElementById('button').addEventListener('mouseleave', () =>{
+    document.getElementById('button').style.backgroundColor = "black";
+    document.getElementById('button').style.color = "#0909e1";
+})
+
+
 // change footer
 document.getElementsByTagName('footer')[0].style.color = "#0909e1";
 document.getElementsByTagName('footer')[0].style.backgroundColor = "black";
@@ -119,7 +145,7 @@ document.getElementById('wendy').style.border = "2px dashed #0909e1";
 document.getElementById('wendy').style.borderRadius = "50%";
 document.getElementById('wendy').style.color = "#0909e1";
 
-//hover effect on button
+//hover effect on wendy's page button
 document.getElementById('wendy').addEventListener('mouseover', ()=>{
     document.getElementById('wendy').style.backgroundColor = "#0909e1";
     document.getElementById('wendy').style.color =  "black";
@@ -129,7 +155,7 @@ document.getElementById('wendy').addEventListener('mouseover', ()=>{
     document.getElementById('wendy').style.borderRadius = "";
 })
 
-//mouse out effect on button
+//mouse out effect on wendy's page button
 document.getElementById('wendy').addEventListener('mouseout', () =>{
     document.getElementById('wendy').style.backgroundColor = "transparent";
     document.getElementById('wendy').style.border = "2px dashed #0909e1";
@@ -143,19 +169,18 @@ addButton();
 let old = false;
 
 function addButton(){
-    let Button = document.createElement('button');
-    document.body.appendChild(Button);
-    Button.innerText = '❓';
-    Button.style.position = 'fixed';
-    Button.style.width = '30px';
-    Button.style.height = '30px';
-    Button.style.left = '10px';
-    Button.style.top = '30px';
-    Button.style.backgroundColor = "#0909e1";
-    Button.style.borderRadius = '50%';
-    Button.addEventListener('click', () =>{
-        console.log(old);
-        if(old){
+    let switcheroo = document.createElement('button');
+    document.body.appendChild(switcheroo);
+    switcheroo.innerText = '❓';
+    switcheroo.style.position = 'fixed';
+    switcheroo.style.width = '30px';
+    switcheroo.style.height = '30px';
+    switcheroo.style.left = '10px';
+    switcheroo.style.top = '30px';
+    switcheroo.style.backgroundColor = "#0909e1";
+    switcheroo.style.borderRadius = '50%';
+    switcheroo.addEventListener('click', () =>{
+        if(old === false){
             document.body.innerHTML = newPage;
             document.body.style.background = 'black';
             document.body.style.color = '#0909e1';
