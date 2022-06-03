@@ -149,8 +149,10 @@ function addButton(){
     Button.style.position = 'fixed';
     Button.style.width = '30px';
     Button.style.height = '30px';
-    Button.style.right = '30px';
-    Button.style.bottom = '30px';
+    Button.style.left = '10px';
+    Button.style.top = '30px';
+    Button.style.backgroundColor = "#0909e1";
+    Button.style.borderRadius = '50%';
     Button.addEventListener('click', () =>{
         console.log(old);
         if(old){
