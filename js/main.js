@@ -21,8 +21,6 @@ document.getElementsByTagName('li')[3].innerText ="Down to earth";
 let challengebox = document.getElementById('challengebox');
 let label = document.createElement("label");
 label.for = "input";
-
-
 challengebox.appendChild(label);
 
 //fix favicon
