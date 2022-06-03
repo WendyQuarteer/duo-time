@@ -1,3 +1,4 @@
+const oldPage = document.body.innerHTML;
 //challengebox
 const button = document.getElementById('button');
 const input = document.getElementById('input');
@@ -85,7 +86,7 @@ document.getElementsByClassName('media')[1].style.backgroundImage = "url('images
 document.getElementsByClassName('media')[1].style.backgroundRepeat = "no-repeat";
 document.getElementsByClassName('media')[1].style.backgroundSize = "cover";
 document.getElementsByClassName('media')[1].style.color = "#0909e1";
-    
+
 //hobby section styling
 document.getElementsByClassName('media')[2].style.backgroundImage = "url('images/hobbybackground.jpg')";
 document.getElementsByClassName('media')[2].style.backgroundRepeat = "no-repeat";
@@ -135,3 +136,32 @@ document.getElementById('wendy').addEventListener('mouseout', () =>{
     document.getElementById('wendy').style.borderRadius = "50%";
     document.getElementById('wendy').style.color = "#0909e1";
 })
+
+//reset button
+const newPage = document.body.innerHTML;
+addButton();
+let old = false;
+
+function addButton(){
+    let Button = document.createElement('button');
+    document.body.appendChild(Button);
+    Button.innerText = '❓';
+    Button.style.position = 'fixed';
+    Button.style.width = '30px';
+    Button.style.height = '30px';
+    Button.style.right = '30px';
+    Button.style.bottom = '30px';
+    Button.addEventListener('click', () =>{
+        console.log(old);
+        if(old){
+            document.body.innerHTML = newPage;
+            document.body.style.background = 'black';
+            document.body.style.color = '#0909e1';
+        }else{
+            document.body.innerHTML = oldPage;
+            document.body.removeAttribute('style');
+        }
+        old = !old;
+        addButton();
+    });
+}
