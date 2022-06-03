@@ -194,14 +194,17 @@ function addButton(){
             document.body.innerHTML = newPage;
             document.body.style.background = 'black';
             document.body.style.color = '#0909e1';
+            challengeButtonHover()
+            celebrityHover()
+            wendyPageHover()
         }else{
             document.body.innerHTML = oldPage;
             document.body.removeAttribute('style');
         }
         old = !old;
         addButton();
-        challengeButtonHover()
-        celebrityHover()
-        wendyPageHover()
+        // challengeButtonHover()
+        // celebrityHover()
+        // wendyPageHover()
     });
 }
